@@ -30,7 +30,7 @@ def main():
         print('</channel></rss>', file=out)
 
     with open("index.html", "w", encoding="utf-8", newline='\n') as out:
-        print(f'<!DOCTYPE html><html><head><title>{name}</title></head><body><h1>{name}</h1><img src="{base}/logo.png" /><a href="{base}/feed.xml">feed</a><ul>', file=out)
+        print(f'<!DOCTYPE html><html><head><title>{name}</title></head><body><h1>{name}</h1><p><img src="{base}/logo.png" /></p><a href="{base}/feed.xml">feed</a><ul>', file=out)
         for idx, item in enumerate(items):
             print(f'<li><a href="{base}/{item[1]}">{item[0]}</a></li>', file=out)
         print(f'</ul></body><p>{_now}</p></html>', file=out)
